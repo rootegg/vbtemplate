@@ -15,7 +15,7 @@ const isAnalyzer = process.env.env == "analyzer";
 /**
  * @type {webpack.Configuration} // 自动提示
  */
-const webpackConfig = {
+let webpackConfig = {
   entry: {
     index: "./src/index.js",
   },
@@ -26,14 +26,13 @@ const webpackConfig = {
     chunkFilename: "[name].[chunkhash].js", // 通常是一个入口一个chunk，但是异步请求import('...')或require.ensure('...')会形成chunk，optimization.splitChunk可以独立chunk
     assetModuleFilename: "assets/[name].[contenthash].[ext][query]", // 图片等素材文件夹和命名用contenthash
   },
-  mode: "production",
   module: {
     rules: [
-      // {
-      //   test: /\.js$/,
-      //   exclude: /node_modules/,
-      //   use: ["babel-loader"],
-      // },
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: ["babel-loader", "vue-jsx-hot-loader"],
+      },
       {
         test: /\.vue$/,
         use: ["vue-loader"],
@@ -102,15 +101,18 @@ if (isDevelopment) {
   /**
    * 只开发环境要 source-map
    */
-  merge(webpackConfig, {
+  webpackConfig = merge(webpackConfig, {
     mode: "development",
     output: {
       clean: false,
     },
     devtool: "source-map",
   });
-} else {
-  merge(webpackConfig, {
+}
+
+if (isProduction || isAnalyzer) {
+  webpackConfig = merge(webpackConfig, {
+    mode: "production",
     plugins: [
       /**
        * 清空dist目录
@@ -135,12 +137,12 @@ if (isDevelopment) {
     //   ],
     // },
   });
-  if (isAnalyzer) {
-    // 体积分析
-    merge(webpackConfig, {
-      plugins: [new BundleAnalyzerPlugin()],
-    });
-  }
+}
+if (isAnalyzer) {
+  // 体积分析
+  webpackConfig = merge(webpackConfig, {
+    plugins: [new BundleAnalyzerPlugin()],
+  });
 }
 
 module.exports = webpackConfig;
