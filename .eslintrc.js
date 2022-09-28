@@ -4,7 +4,12 @@ module.exports = {
     commonjs: true,
     es2021: true
   },
-  extends: ['eslint:recommended', 'plugin:vue/vue3-essential', 'prettier'],
+  extends: [
+    'eslint:recommended',
+    'plugin:vue/vue3-essential',
+    'plugin:react/recommended',
+    'prettier'
+  ],
   overrides: [],
   parserOptions: {
     ecmaVersion: 'latest'
