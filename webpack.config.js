@@ -62,11 +62,6 @@ let webpackConfig = {
     },
     extensions: [".js", ".jsx"],
   },
-  devServer: {
-    open: true,
-    port: 3000,
-    hot: true,
-  },
   optimization: {
     splitChunks: {
       chunks: "all",
@@ -105,6 +100,20 @@ if (isDevelopment) {
     mode: "development",
     output: {
       clean: false,
+    },
+    devServer: {
+      open: true,
+      port: 3000,
+      hot: true,
+      proxy: {
+        "^/api": {
+          target: "http://youdomain.com/",
+          changeOrigin: true,
+          headers: {
+            referer: "http://youdomain.com",
+          },
+        },
+      },
     },
     devtool: "source-map",
   });
