@@ -5,11 +5,11 @@
 <script>
 // import { f1 } from "./util";
 export default {
-  name: "app",
+  name: 'app'
   // methods: {
   //   f1,
   // },
-};
+}
 </script>
 
 <style lang="scss" scoped>
