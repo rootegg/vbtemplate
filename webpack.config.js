@@ -6,7 +6,6 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const TerserWebpackPlugin = require('terser-webpack-plugin') // webpack5 包中自动包含terser-webpack-plugin包，不需要单独安装
 const CssMinimizerWebpackPlugin = require('css-minimizer-webpack-plugin')
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
-const { VueLoaderPlugin } = require('vue-loader')
 const { merge } = require('webpack-merge')
 const isDevelopment = process.env.env == 'development'
 const isProduction = process.env.env == 'production'
@@ -71,7 +70,6 @@ let webpackConfig = {
     }
   },
   plugins: [
-    new VueLoaderPlugin(),
     new HtmlWebpackPlugin({
       title: '模板网页',
       template: './index.html',
