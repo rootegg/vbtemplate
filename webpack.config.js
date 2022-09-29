@@ -29,13 +29,9 @@ let webpackConfig = {
   module: {
     rules: [
       {
-        test: /\.(j|t)sx?$/,
+        test: /\.js$/,
         exclude: /node_modules/,
-        use: ['babel-loader', 'vue-jsx-hot-loader']
-      },
-      {
-        test: /\.vue$/,
-        use: ['vue-loader']
+        use: ['babel-loader']
       },
       {
         test: /(\.css|\.scss)$/,
@@ -60,7 +56,7 @@ let webpackConfig = {
     alias: {
       '@/': path.resolve('./src')
     },
-    extensions: ['.js', '.jsx', '.ts', '.tsx']
+    extensions: ['.js']
   },
   optimization: {
     splitChunks: {

@@ -7,49 +7,14 @@ module.exports = {
         corejs: 2,
         modules: false
       }
-    ],
-    [
-      '@babel/preset-react',
-      {
-        runtime: 'automatic' // classic automatic
-      }
-    ],
-    '@babel/preset-typescript'
+    ]
   ],
   plugins: [
-    ['@babel/plugin-transform-runtime'],
     [
-      'babel-plugin-import',
+      '@babel/plugin-transform-runtime',
       {
-        libraryName: 'vant',
-        libraryDirectory: 'es',
-        style: true
-      },
-      'vant'
-    ],
-    [
-      'babel-plugin-import',
-      {
-        libraryName: 'antd',
-        style: true // or 'css'
+        corejs: 2
       }
-    ],
-    [
-      'babel-plugin-import',
-      {
-        libraryName: 'lodash',
-        libraryDirectory: '',
-        camel2DashComponentName: false // default: true
-      },
-      'lodash'
-    ],
-    [
-      'babel-plugin-component',
-      {
-        libraryName: 'element-ui',
-        styleLibraryName: 'theme-chalk'
-      },
-      'element-ui'
     ]
   ]
 }
