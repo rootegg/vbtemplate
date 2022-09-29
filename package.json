@@ -25,6 +25,7 @@
     "@commitlint/config-conventional": "^17.1.0",
     "@types/react": "^18.0.21",
     "@types/react-dom": "^18.0.6",
+    "@typescript-eslint/eslint-plugin": "^5.38.1",
     "@typescript-eslint/parser": "^5.38.1",
     "autoprefixer": "^10.4.12",
     "babel-loader": "^8.2.5",
@@ -38,7 +39,6 @@
     "eslint": "^8.24.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-react": "^7.31.8",
-    "eslint-plugin-vue": "^9.5.1",
     "html-webpack-plugin": "^5.5.0",
     "husky": "^8.0.1",
     "lint-staged": "^13.0.3",
@@ -54,9 +54,6 @@
     "stylelint-config-standard": "^28.0.0",
     "terser-webpack-plugin": "^5.3.6",
     "typescript": "^4.8.4",
-    "vue-eslint-parser": "^9.1.0",
-    "vue-jsx-hot-loader": "^1.4.1",
-    "vue-loader": "^15.10.0",
     "webpack": "^5.74.0",
     "webpack-bundle-analyzer": "^4.6.1",
     "webpack-cli": "^4.10.0",
@@ -69,7 +66,6 @@
     "lodash": "^4.17.21",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "vant": "^2.12.50",
-    "vue": "^2.7.10"
+    "vant": "^2.12.50"
   }
 }
