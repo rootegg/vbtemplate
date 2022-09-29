@@ -1,7 +1,3 @@
-<template>
-  <div>{{ name }}, hi，vue!</div>
-</template>
-
 <script>
 export default {
   name: 'app',
@@ -9,6 +5,9 @@ export default {
     return {
       name: 'jack'
     }
+  },
+  render() {
+    return <div>{this.name}, hi，vue!</div>
   }
 }
 </script>
