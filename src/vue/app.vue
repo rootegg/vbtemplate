@@ -1,10 +1,15 @@
 <template>
-  <div>hi，vue!</div>
+  <div>{{ name }},hi，vue!</div>
 </template>
 
 <script>
 export default {
-  name: 'app'
+  name: 'app',
+  data() {
+    return {
+      name: 'jack'
+    }
+  }
 }
 </script>
 
