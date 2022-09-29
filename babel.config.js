@@ -8,13 +8,7 @@ module.exports = {
         modules: false
       }
     ],
-    [
-      '@babel/preset-react',
-      {
-        runtime: 'automatic' // classic automatic
-      }
-    ],
-    '@babel/preset-typescript'
+    ['react-app', { flow: false, typescript: true }]
   ],
   plugins: [
     ['@babel/plugin-transform-runtime'],

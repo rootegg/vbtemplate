@@ -1,0 +1,9 @@
+{
+  "editor.lineHeight": 30,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.stylelint": true,
+    "source.fixAll.eslint": true
+  },
+  "eslint.format.enable": true,
+  "eslint.nodeEnv": "production"
+}

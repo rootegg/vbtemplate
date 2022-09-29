@@ -5,6 +5,6 @@ type Prop = {
 }
 
 const App = (props: Prop) => {
-  return <div>{props.name} hi,react!</div>
+  return <div>{props.name} hi1,react!</div>
 }
 export default App

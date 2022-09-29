@@ -10,6 +10,7 @@ const { merge } = require('webpack-merge')
 const isDevelopment = process.env.env == 'development'
 const isProduction = process.env.env == 'production'
 const isAnalyzer = process.env.env == 'analyzer'
+process.env.NODE_ENV = process.env.env
 
 /**
  * @type {webpack.Configuration} // 自动提示
