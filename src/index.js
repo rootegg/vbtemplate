@@ -16,4 +16,4 @@ new Vue({
  */
 const container = document.getElementById('app')
 const root = createRoot(container) // createRoot(container!) if you use TypeScript
-root.render(<ReactApp />)
+root.render(<ReactApp name="bob" />)
